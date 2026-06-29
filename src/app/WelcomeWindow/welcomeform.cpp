@@ -265,6 +265,9 @@ void WelcomeForm::L2CreateButton()
     }
 
     IDEWindow *mw = new IDEWindow(new_project_path, nullptr);
+
+    mw->setAttribute(Qt::WA_DeleteOnClose);
+    mw->setWindowState(Qt::WindowMaximized);
     mw->show();
     this->destroy();
 }
@@ -277,7 +280,10 @@ void WelcomeForm::L2CreateProject(QString name, QString path, QString language){
 void WelcomeForm::SetProjectHistoryList(){
     const QStringList history = utils::ProjectsHistoryManager::loadProjectsHistory();
 
-    QStringListModel *model = new QStringListModel(this);
-    model->setStringList(history);
-    RecentProjectsList->setModel(model);
+    if(!RecentProjectsModel){
+        RecentProjectsModel = new QStringListModel(this);
+        RecentProjectsModel->setModel(RecentProjectsModel);
+    }
+    RecentProjectsModel->setStringList(history);
+    
 }

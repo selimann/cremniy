@@ -12,7 +12,7 @@ static QFrame *makeKeyCellFrame(const QString &label, const QString &codeHex, QW
     auto *f = new QFrame(parent);
     f->setFrameShape(QFrame::StyledPanel);
     f->setMinimumWidth(minWidth);
-    f->setMinimumHeight(50);
+    f->setMinimumHeight(70);
     f->setSizePolicy(QSizePolicy::Fixed, QSizePolicy::Fixed);
     auto *lay = new QVBoxLayout(f);
     lay->setContentsMargins(3, 2, 3, 2);

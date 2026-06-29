@@ -30,6 +30,7 @@ private:
     QLabel *path_label;
     ClickableLineEdit *path_lineEdit;
     QListView *RecentProjectsList;
+    QStringListModel *RecentProjectsModel = nullptr;
     void L2CreateProject(QString name, QString path, QString language);
     void SetProjectHistoryList();
     void OpenProject(QString path);

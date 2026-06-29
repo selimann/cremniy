@@ -87,7 +87,7 @@ SettingsDialog::SettingsDialog(QWidget *parent)
         m_objdumpPath->setPlaceholderText(tr("Leave empty to use PATH lookup"));
         m_objdumpStatus = new QLabel(row);
         m_objdumpStatus->setObjectName("settingsStatusLabel");
-        m_objdumpStatus->setMinimumWidth(150);
+        m_objdumpStatus->setMinimumWidth(200);
         m_objdumpStatus->setTextInteractionFlags(Qt::TextSelectableByMouse);
         auto *browse = new QPushButton(tr("Browse…"), row);
         browse->setFixedWidth(90);

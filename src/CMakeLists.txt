@@ -8,6 +8,9 @@ set(CMAKE_AUTORCC ON)
 
 set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
+if(MSVC)
+    add_compile_options(/Zc:__cplusplus /permissive- /FS)
+endif()
 
 find_package(Qt6 6.8.2 REQUIRED COMPONENTS Widgets LinguistTools Test Svg)
 
@@ -198,3 +201,5 @@ install(TARGETS ${PROJECT_NAME}
 )
 
 qt_finalize_executable(${PROJECT_NAME})
+
+
